@@ -28,7 +28,7 @@ Namespace FilesPreviewGenerator
 				Return ExportToImage(wordDocumentAPI)
 			End Using
 		End Function
-		Private Function ExportToImage(ByVal component As IPrintable) As Bitmap
+		Private Function ExportToImage(ByVal component As IBasePrintable) As Bitmap
 			Dim pLink As New PrintableComponentLink(New PrintingSystem())
 			pLink.Component = component
 			pLink.CreateDocument(True)
