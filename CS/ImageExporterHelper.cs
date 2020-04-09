@@ -36,7 +36,7 @@ namespace FilesPreviewGenerator
                 return ExportToImage(wordDocumentAPI);
             }
         }
-        private static Bitmap ExportToImage(IPrintable component)
+        private static Bitmap ExportToImage(IBasePrintable component)
         {
             PrintableComponentLink pLink = new PrintableComponentLink(new PrintingSystem());
             pLink.Component = component;
