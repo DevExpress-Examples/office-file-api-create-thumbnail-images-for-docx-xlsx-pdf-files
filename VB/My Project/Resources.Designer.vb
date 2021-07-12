@@ -18,15 +18,15 @@ Namespace My.Resources
 	' class via a tool like ResGen or Visual Studio.
 	' To add or remove a member, edit your .ResX file then rerun ResGen
 	' with the /str option, or rebuild your VS project.
-	<Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")>
-	<Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>
-	<Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
+	<System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")>
+	<System.Diagnostics.DebuggerNonUserCodeAttribute()>
+	<System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
 	Global.Microsoft.VisualBasic.HideModuleNameAttribute()>
 	Friend Module Resources
 
-		Private resourceMan As Global.System.Resources.ResourceManager
+		Private resourceMan As System.Resources.ResourceManager
 
-		Private resourceCulture As Global.System.Globalization.CultureInfo
+		Private resourceCulture As System.Globalization.CultureInfo
 
 '		internal Resources()
 '		{
@@ -35,11 +35,11 @@ Namespace My.Resources
 		''' <summary>
 		'''   Returns the cached ResourceManager instance used by this class.
 		''' </summary>
-		<Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
-		Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+		<System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>
+		Friend ReadOnly Property ResourceManager() As System.Resources.ResourceManager
 			Get
 				If (resourceMan Is Nothing) Then
-					Dim temp As New Global.System.Resources.ResourceManager("Resources", GetType(Resources).Assembly)
+					Dim temp As New System.Resources.ResourceManager("Resources", GetType(Resources).Assembly)
 					resourceMan = temp
 				End If
 				Return resourceMan
@@ -50,8 +50,8 @@ Namespace My.Resources
 		'''   Overrides the current thread's CurrentUICulture property for all
 		'''   resource lookups using this strongly typed resource class.
 		''' </summary>
-		<Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
-		Friend Property Culture() As Global.System.Globalization.CultureInfo
+		<System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>
+		Friend Property Culture() As System.Globalization.CultureInfo
 			Get
 				Return resourceCulture
 			End Get

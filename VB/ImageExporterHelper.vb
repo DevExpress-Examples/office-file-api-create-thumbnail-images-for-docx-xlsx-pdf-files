@@ -1,6 +1,8 @@
-﻿Imports DevExpress.Pdf
+﻿Imports DevExpress.Office.Utils
+Imports DevExpress.Pdf
 Imports DevExpress.Spreadsheet
 Imports DevExpress.XtraPrinting
+Imports DevExpress.XtraPrintingLinks
 Imports DevExpress.XtraRichEdit
 Imports System
 Imports System.Drawing
@@ -9,10 +11,14 @@ Imports System.Linq
 
 Namespace FilesPreviewGenerator
 	Public Module ImageExporterHelper
-		Public Function GenerateImageFromExcel(ByVal fileName As String) As Bitmap
+		Public Function GenerateImageFromExcel(ByVal fileName As String) As Image
 			Using excelDocumentAPI As New Workbook()
 				excelDocumentAPI.LoadDocument(fileName)
-				Return ExportToImage(excelDocumentAPI)
+				Dim worksheet = excelDocumentAPI.Worksheets.ActiveWorksheet
+				Dim printableCellRange = worksheet.GetPrintableRange()
+
+				Dim docImage As OfficeImage = printableCellRange.ExportToImage()
+				Return docImage.NativeImage
 			End Using
 		End Function
 
@@ -29,7 +35,7 @@ Namespace FilesPreviewGenerator
 			End Using
 		End Function
 		Private Function ExportToImage(ByVal component As IBasePrintable) As Bitmap
-			Dim pLink As New PrintableComponentLink(New PrintingSystem())
+			Dim pLink As New PrintableComponentLinkBase(New PrintingSystemBase())
 			pLink.Component = component
 			pLink.CreateDocument(True)
 
