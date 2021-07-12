@@ -1,6 +1,8 @@
-﻿using DevExpress.Pdf;
+﻿using DevExpress.Office.Utils;
+using DevExpress.Pdf;
 using DevExpress.Spreadsheet;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraPrintingLinks;
 using DevExpress.XtraRichEdit;
 using System;
 using System.Drawing;
@@ -11,12 +13,16 @@ namespace FilesPreviewGenerator
 {
     public static class ImageExporterHelper
     {
-        public static Bitmap GenerateImageFromExcel(string fileName)
+        public static Image GenerateImageFromExcel(string fileName)
         {
             using (Workbook excelDocumentAPI = new Workbook())
             {
                 excelDocumentAPI.LoadDocument(fileName);
-                return ExportToImage(excelDocumentAPI);
+                var worksheet = excelDocumentAPI.Worksheets.ActiveWorksheet;
+                var printableCellRange = worksheet.GetPrintableRange();
+              
+                OfficeImage docImage = printableCellRange.ExportToImage();
+                return docImage.NativeImage;
             }
         }
 
@@ -38,7 +44,7 @@ namespace FilesPreviewGenerator
         }
         private static Bitmap ExportToImage(IBasePrintable component)
         {
-            PrintableComponentLink pLink = new PrintableComponentLink(new PrintingSystem());
+            PrintableComponentLinkBase pLink = new PrintableComponentLinkBase(new PrintingSystemBase());
             pLink.Component = component;
             pLink.CreateDocument(true);
 
