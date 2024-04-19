@@ -4,6 +4,7 @@ using DevExpress.Spreadsheet;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrintingLinks;
 using DevExpress.XtraRichEdit;
+using DevExpress.XtraRichEdit.Export.Image;
 using System;
 using System.Drawing;
 using System.IO;
@@ -19,9 +20,8 @@ namespace FilesPreviewGenerator
             {
                 excelDocumentAPI.LoadDocument(fileName);
                 var worksheet = excelDocumentAPI.Worksheets.ActiveWorksheet;
-                var printableCellRange = worksheet.GetPrintableRange();
-              
-                OfficeImage docImage = printableCellRange.ExportToImage();
+
+                OfficeImage docImage = worksheet.CreateThumbnail(1600, 900);
                 return docImage.NativeImage;
             }
         }
@@ -39,25 +39,19 @@ namespace FilesPreviewGenerator
             using (RichEditDocumentServer wordDocumentAPI = new RichEditDocumentServer())
             {
                 wordDocumentAPI.LoadDocument(fileName);
-                return ExportToImage(wordDocumentAPI);
+                RichEditImageExportOptions options = new RichEditImageExportOptions();
+                options.ExportMode = RichEditImageExportMode.SingleFilePageByPage;
+                options.PageRange = "1";
+
+                var streamList = wordDocumentAPI.Document.ExportToImage(options);
+
+                Bitmap bm = new Bitmap(streamList[0]);
+                streamList[0].Close();
+
+                return bm;
+
+
             }
-        }
-        private static Bitmap ExportToImage(IBasePrintable component)
-        {
-            PrintableComponentLinkBase pLink = new PrintableComponentLinkBase(new PrintingSystemBase());
-            pLink.Component = component;
-            pLink.CreateDocument(true);
-
-            MemoryStream mStream = new MemoryStream();
-            ImageExportOptions options = new ImageExportOptions();
-            options.ExportMode = ImageExportMode.SingleFilePageByPage;
-            options.PageRange = "1";
-            pLink.ExportToImage(mStream, options);
-            mStream.Position = 0;
-            Bitmap bm = new Bitmap(mStream);
-            mStream.Close();
-
-            return bm;
         }
     }
 }
