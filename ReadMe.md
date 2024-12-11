@@ -9,6 +9,9 @@
 
 This example demonstrates how to generate preview images for files in different document formats (DOCX, XLSX, PDF) using the [Office File API](https://docs.devexpress.com/OfficeFileAPI/14911/Office-File-API) library. To display the generated images the WinForms GridControl's [WinExplorerView](https://docs.devexpress.com/WindowsForms/114759/Controls-and-Libraries/Data-Grid/Views/WinExplorer-View) is used.
 
+> [!Important]  
+> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. For pricing information, please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page. 
+
 ![](./Images/Thumbnails.png)
 
 ## Files to Review
