@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/143175290/24.2.1%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T830551)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -8,6 +7,9 @@
 # Office File API - Create Thumbnail Images for Excel, Word, and PDF Documents
 
 This example demonstrates how to generate preview images for files in different document formats (DOCX, XLSX, PDF) using the [Office File API](https://docs.devexpress.com/OfficeFileAPI/14911/Office-File-API) library. To display the generated images the WinForms GridControl's [WinExplorerView](https://docs.devexpress.com/WindowsForms/114759/Controls-and-Libraries/Data-Grid/Views/WinExplorer-View) is used.
+
+> [!Important]  
+> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. For pricing information, please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page. 
 
 ![](./Images/Thumbnails.png)
 
