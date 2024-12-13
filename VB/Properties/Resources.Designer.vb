@@ -7,7 +7,9 @@
 '     the code is regenerated.
 ' </auto-generated>
 '------------------------------------------------------------------------------
-Namespace FilesPreviewGenerator.Properties
+Imports System
+
+Namespace TileView_ManualThumbs.Properties
 
     ''' <summary>
     '''   A strongly-typed resource class, for looking up localized strings, etc.
@@ -16,7 +18,7 @@ Namespace FilesPreviewGenerator.Properties
     ' class via a tool like ResGen or Visual Studio.
     ' To add or remove a member, edit your .ResX file then rerun ResGen
     ' with the /str option, or rebuild your VS project.
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")>
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>
     Friend Class Resources
@@ -35,12 +37,12 @@ Namespace FilesPreviewGenerator.Properties
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
         Friend Shared ReadOnly Property ResourceManager As Global.System.Resources.ResourceManager
             Get
-                If(FilesPreviewGenerator.Properties.Resources.resourceMan Is Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Resources", GetType(FilesPreviewGenerator.Properties.Resources).Assembly)
-                    FilesPreviewGenerator.Properties.Resources.resourceMan = temp
+                If Object.ReferenceEquals(TileView_ManualThumbs.Properties.Resources.resourceMan, Nothing) Then
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Resources", GetType(TileView_ManualThumbs.Properties.Resources).Assembly)
+                    TileView_ManualThumbs.Properties.Resources.resourceMan = temp
                 End If
 
-                Return FilesPreviewGenerator.Properties.Resources.resourceMan
+                Return TileView_ManualThumbs.Properties.Resources.resourceMan
             End Get
         End Property
 
@@ -51,11 +53,11 @@ Namespace FilesPreviewGenerator.Properties
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>
         Friend Shared Property Culture As Global.System.Globalization.CultureInfo
             Get
-                Return FilesPreviewGenerator.Properties.Resources.resourceCulture
+                Return TileView_ManualThumbs.Properties.Resources.resourceCulture
             End Get
 
             Set(ByVal value As Global.System.Globalization.CultureInfo)
-                FilesPreviewGenerator.Properties.Resources.resourceCulture = value
+                TileView_ManualThumbs.Properties.Resources.resourceCulture = value
             End Set
         End Property
     End Class

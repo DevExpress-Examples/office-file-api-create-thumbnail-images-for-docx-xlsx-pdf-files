@@ -1,11 +1,9 @@
 Imports DevExpress.Office.Utils
 Imports DevExpress.Pdf
 Imports DevExpress.Spreadsheet
-Imports DevExpress.XtraPrinting
-Imports DevExpress.XtraPrintingLinks
 Imports DevExpress.XtraRichEdit
+Imports DevExpress.XtraRichEdit.Export.Image
 Imports System.Drawing
-Imports System.IO
 
 Namespace FilesPreviewGenerator
 
@@ -15,8 +13,7 @@ Namespace FilesPreviewGenerator
             Using excelDocumentAPI As Workbook = New Workbook()
                 excelDocumentAPI.LoadDocument(fileName)
                 Dim worksheet = excelDocumentAPI.Worksheets.ActiveWorksheet
-                Dim printableCellRange = worksheet.GetPrintableRange()
-                Dim docImage As OfficeImage = printableCellRange.ExportToImage()
+                Dim docImage As OfficeImage = worksheet.CreateThumbnail(1600, 900)
                 Return docImage.NativeImage
             End Using
         End Function
@@ -31,23 +28,14 @@ Namespace FilesPreviewGenerator
         Public Function GenerateImageFromWord(ByVal fileName As String) As Bitmap
             Using wordDocumentAPI As RichEditDocumentServer = New RichEditDocumentServer()
                 wordDocumentAPI.LoadDocument(fileName)
-                Return ExportToImage(wordDocumentAPI)
+                Dim options As RichEditImageExportOptions = New RichEditImageExportOptions()
+                options.ExportMode = RichEditImageExportMode.SingleFilePageByPage
+                options.PageRange = "1"
+                Dim streamList = wordDocumentAPI.Document.ExportToImage(options)
+                Dim bm As Bitmap = New Bitmap(streamList(0))
+                streamList(0).Close()
+                Return bm
             End Using
-        End Function
-
-        Private Function ExportToImage(ByVal component As IBasePrintable) As Bitmap
-            Dim pLink As PrintableComponentLinkBase = New PrintableComponentLinkBase(New PrintingSystemBase())
-            pLink.Component = component
-            pLink.CreateDocument(True)
-            Dim mStream As MemoryStream = New MemoryStream()
-            Dim options As ImageExportOptions = New ImageExportOptions()
-            options.ExportMode = ImageExportMode.SingleFilePageByPage
-            options.PageRange = "1"
-            pLink.ExportToImage(mStream, options)
-            mStream.Position = 0
-            Dim bm As Bitmap = New Bitmap(mStream)
-            mStream.Close()
-            Return bm
         End Function
     End Module
 End Namespace
