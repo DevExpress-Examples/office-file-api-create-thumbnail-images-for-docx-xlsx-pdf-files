@@ -12,7 +12,7 @@ This example demonstrates how to generate preview images for files in different 
 
 <br/>See the **ImageExporterHelper** class implementation to learn how to convert the first page of the Word/Excel/PDF document to an image.
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=office-file-api-create-thumbnail-images-for-docx-xlsx-pdf-files&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=office-file-api-create-thumbnail-images-for-docx-xlsx-pdf-files&~~~was_helpful=no)
 
