@@ -21,7 +21,7 @@ This example demonstrates how to generate preview images for files in different 
 * [How to: Generate a Thumbnail Image from a Worksheet](https://docs.devexpress.com/OfficeFileAPI/403376/spreadsheet-document-api/examples/worksheets/how-to-generate-a-thumbnail-from-a-worksheet)
 * [How to: Generate a Thumbnail Image from a Chart Sheet](https://docs.devexpress.com/OfficeFileAPI/403379/spreadsheet-document-api/examples/charts/how-to-generate-a-thumbnail-from-a-chart-sheet)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=office-file-api-create-thumbnail-images-for-docx-xlsx-pdf-files&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=office-file-api-create-thumbnail-images-for-docx-xlsx-pdf-files&~~~was_helpful=no)
 
