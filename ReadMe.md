@@ -35,7 +35,7 @@ This example demonstrates how to generate preview images for files in different 
 * [How to: Use the Word Processing Document API to Export a Document to a Series of Images](https://docs.devexpress.com/OfficeFileAPI/404872/word-processing-document-api/examples/export/how-to-export-a-document-to-a-series-of-images)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=office-file-api-create-thumbnail-images-for-docx-xlsx-pdf-files&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=office-file-api-create-thumbnail-images-for-docx-xlsx-pdf-files&~~~was_helpful=no)
 
