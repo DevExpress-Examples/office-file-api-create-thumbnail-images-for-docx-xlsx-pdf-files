@@ -7,18 +7,18 @@
 '     the code is regenerated.
 ' </auto-generated>
 '------------------------------------------------------------------------------
-Namespace FilesPreviewGenerator.Properties
+Namespace TileView_ManualThumbs.Properties
 
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")>
     Friend NotInheritable Partial Class Settings
         Inherits Global.System.Configuration.ApplicationSettingsBase
 
-        Private Shared defaultInstance As FilesPreviewGenerator.Properties.Settings = CType((Global.System.Configuration.ApplicationSettingsBase.Synchronized(New FilesPreviewGenerator.Properties.Settings())), FilesPreviewGenerator.Properties.Settings)
+        Private Shared defaultInstance As TileView_ManualThumbs.Properties.Settings = CType((Global.System.Configuration.ApplicationSettingsBase.Synchronized(New TileView_ManualThumbs.Properties.Settings())), TileView_ManualThumbs.Properties.Settings)
 
         Public Shared ReadOnly Property [Default] As Settings
             Get
-                Return FilesPreviewGenerator.Properties.Settings.defaultInstance
+                Return TileView_ManualThumbs.Properties.Settings.defaultInstance
             End Get
         End Property
     End Class
